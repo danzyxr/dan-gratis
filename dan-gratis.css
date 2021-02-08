@@ -1,9 +1,3 @@
-/*
-front-size = rem
-padding/margin = em
-widths = em or %
-*/
-
 :root {
   --txt-1: blue;
   --txt-2: violet;
@@ -14,10 +8,14 @@ widths = em or %
   --link: red;
 }
 
-* {
+html,
+body {
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 900px) {
@@ -56,31 +54,19 @@ ul {
   list-style: none;
 }
 
-.s1 {
-  background-color: var(--color-1);
-  border-bottom: 0.1em solid var(--border);
-  overflow: auto;
-}
-
-.s2 {
-  background-color: var(--color-2);
-  border-bottom: 0.1em solid var(--border);
-  overflow: auto;
-}
-
 .container {
   width: 85%;
   margin: 0 auto;
 }
 
-#greeting {
+#hello {
   display: grid;
   text-align: center;
   align-content: center;
   min-height: 5em;
 }
 
-#intro {
+#landing {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -91,7 +77,7 @@ ul {
 }
 
 @media screen and (max-width: 900px) {
-  #intro {
+  #landing {
     grid-template-columns: 1fr;
     grid-template-areas:
       "nav-bar"
@@ -125,6 +111,7 @@ ul {
   padding: 0.5em;
   grid-area: l-col;
   background-color: #eee;
+  color: #333;
 }
 
 #r-col {
@@ -134,30 +121,7 @@ ul {
   padding: 0.5em;
   grid-area: r-col;
   background-color: #333;
-}
-
-#stargems {
-  width: 5.5em;
-  height: 5.5em;
-  object-fit: cover;
-  display: block;
-}
-
-#preview {
-  width: inherit;
-  border: 20px solid pink;
-  background-color: var(--preview);
-  padding: 0.5em;
-}
-
-#wrapper-about {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-#skills {
-  display: flex;
-  justify-content: space-evenly;
+  color: #eee;
 }
 
 .theme-dot {
@@ -165,17 +129,12 @@ ul {
   height: 0.75em;
   margin: 0.25em;
   background-color: #333;
-  border: solid 0.1em var(--border);
-  border-radius: 50%;
+  border-radius: 5%;
   cursor: pointer;
-  -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
 }
 
 .theme-dot:hover {
-  transform: rotate(45deg);
-  border-radius: 10%;
+  transform: rotate(15deg);
 }
 
 #themes {
